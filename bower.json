@@ -1,7 +1,6 @@
 {
-  "name": "hapi-ninja",
-  "version": "0.2.2",
-  "homepage": "https://github.com/poeticninja/hapi-ninja",
+  "name": "cmpe235-web-homepage",
+  "version": "1.0.0",
   "license": "MIT",
   "ignore": [
     "**/.*",

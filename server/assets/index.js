@@ -1,6 +1,5 @@
 // These are the public assets. Goal is to serve css, js, partials, images, or bower packages.
-exports.register = function(server, options, next){
-
+exports.register = function(server, options, next) {
     server.route([
         {
             method: 'GET',

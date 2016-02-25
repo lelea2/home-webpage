@@ -1,19 +1,6 @@
 // Base routes for default index/root path, about page, 404 error pages, and others..
-exports.register = function(server, options, next){
-
+exports.register = function(server, options, next) {
     server.route([
-        {
-            method: 'GET',
-            path: '/about',
-            config: {
-                handler: function(request, reply){
-                    reply.view('about', {
-                        title: 'Super Informative About Page'
-                    });
-                },
-                id: 'about'
-            }
-        },
         {
             method: 'GET',
             path: '/',
@@ -33,7 +20,7 @@ exports.register = function(server, options, next){
             config: {
                 handler: function(request, reply){
                     reply.view('404', {
-                        title: 'Total Bummer 404 Page'
+                        title: 'Page not found'
                     }).code(404);
                 },
                 id: '404'
