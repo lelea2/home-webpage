@@ -16,7 +16,7 @@ exports.register = function(server, options, next) {
                     //var test = qr.imageSync('I love QR!', { type: 'svg' });
                     //console.log(test);
                     //var svg_string = qr.svgObject('I love QR!', { type: 'svg' });
-                    var svg_obj = qr.svgObject('San Jose Center For The Performing Arts', { type: 'svg' });
+                    var svg_obj = qr.svgObject('San Jose Center For The Performing Arts', { type: 'svg', size: 23 });
                     //console.log(svg_string);
                     reply.view('index', {
                         title: 'Welcome to smart tree homepage',
