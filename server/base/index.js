@@ -12,15 +12,14 @@ exports.register = function(server, options, next) {
             path: '/',
             config: {
                 handler: function(request, reply){
-                  // Render the view with the custom greeting
-                    //var test = qr.imageSync('I love QR!', { type: 'svg' });
-                    //console.log(test);
-                    //var svg_string = qr.svgObject('I love QR!', { type: 'svg' });
-                    var svg_obj = qr.svgObject('San Jose Center For The Performing Arts', { type: 'svg', size: 23 });
+                    // Render the view with the custom greeting
+                    var svg_obj1 = qr.svgObject('8f14886c-d267-44b8-8518-8cf363634929', { type: 'svg', size: 5 });
+                    var svg_obj2 = qr.svgObject('45304c60-9eac-48bf-9d0b-c02dda6c6cb3', { type: 'svg', size: 5 });
                     //console.log(svg_string);
                     reply.view('index', {
                         title: 'Welcome to smart tree homepage',
-                        qrcode: svg_obj.path
+                        qrcode1: svg_obj1.path,
+                        qrcode2: svg_obj2.path
                     });
                 },
                 id: 'index'

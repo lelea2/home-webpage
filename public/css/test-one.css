@@ -9,3 +9,9 @@ h1 {
     color: #fff;
     padding: .2em;
 }
+
+.qrcode {
+  width: 46%;
+  display: inline-block;
+  margin-left: 2%;
+}
