@@ -6,9 +6,15 @@
 
     <h1>{{title}}</h1>
     <h2>Scan barcode to login</h2>
+    {% for user in users %}
     <div class="qrcode">
         <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 31 31">
-            <path d="{{qrcode1}}"></path>
+            <path d="{{user.qrcode}}"></path>
         </svg>
+        <div class="detail">
+            <strong>{{user.firstName}}&nbsp;{{user.lastName}}</strong>
+            <p>{{user.email}}</p>
+        </div>
     </div>
+    {% endfor %}
 {% endblock %}

@@ -6,14 +6,15 @@
 
     <h1>{{title}}</h1>
     <h2>Scan barcode for tree information</h2>
+    {% for tree in trees %}
     <div class="qrcode">
         <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 31 31">
-            <path d="{{qrcode1}}"></path>
+            <path d="{{tree.qrcode}}"></path>
         </svg>
+        <div class="detail">
+            <strong>{{tree.title}}</strong>
+            <p>{{tree.description}}</p>
+        </div>
     </div>
-    <div class="qrcode">
-        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 31 31">
-            <path d="{{qrcode2}}"></path>
-        </svg>
-    </div>
+    {% endfor %}
 {% endblock %}

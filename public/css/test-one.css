@@ -13,5 +13,12 @@ h1 {
 .qrcode {
   width: 46%;
   display: inline-block;
-  margin-left: 2%;
+  margin: 20px 0 20px 2%;
+}
+
+.detail {
+  display: inline-block;
+  width: 55%;
+  vertical-align: top;
+  margin: 10px;
 }
