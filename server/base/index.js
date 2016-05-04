@@ -9,9 +9,10 @@ exports.register = function(server, options, next) {
 
     function generateBarCode(data, key) {
         for (var i = 0; i < data.length; i++) {
+            console.log(data[i][key]);
             data[i].qrcode = qr.svgObject(data[i][key], { type: 'svg', size: 5 }).path;
         }
-        //console.log(data);
+        console.log(data);
         return data;
     }
 
@@ -34,6 +35,22 @@ exports.register = function(server, options, next) {
                     });
             },
             id: 'index'
+        }
+    }, {
+        method: 'GET',
+        path: '/faketree',
+        config: {
+            handler: function(request, reply) {
+                var svg_obj1 = qr.svgObject('8f14886c-d267-44b8-8518-8cf363634929', { type: 'svg', size: 5 });
+                var svg_obj2 = qr.svgObject('45304c60-9eac-48bf-9d0b-c02dda6c6cb3', { type: 'svg', size: 5 });
+                //console.log(svg_string);
+                reply.view('faketree', {
+                    title: 'Welcome to smart tree homepage',
+                    qrcode1: svg_obj1.path,
+                    qrcode2: svg_obj2.path
+                });
+            },
+            id: 'fake_tree'
         }
     }, {
         method: 'GET',

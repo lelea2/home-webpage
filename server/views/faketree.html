@@ -1,0 +1,19 @@
+{% extends './layouts/default.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+    <h1>{{title}}</h1>
+    <h2>Scan barcode for tree information</h2>
+    <div class="qrcode">
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 31 31">
+            <path d="{{qrcode1}}"></path>
+        </svg>
+    </div>
+    <div class="qrcode">
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 31 31">
+            <path d="{{qrcode2}}"></path>
+        </svg>
+    </div>
+{% endblock %}
