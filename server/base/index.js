@@ -56,6 +56,28 @@ exports.register = function(server, options, next) {
             },
             id: 'user'
         }
+    }, {
+        method: 'GET',
+        path: '/photos/{treeId}',
+        config: {
+            handler: function(request, reply) {
+                var treeId = request.params.treeId;
+                axios.get('https://secure-dusk-26659.herokuapp.com/tree/' + treeId + '/photos')
+                    .then(function (response) {
+                        reply.view('photos', {
+                            title: 'Photos available',
+                            photos: response.data
+                        });
+                    }).catch(function (err) {
+                        console.log(err);
+                        reply.view('photos', {
+                            title: 'Photos available',
+                            photos: [] //don't display users
+                        });
+                    });
+            },
+            id: 'photos'
+        }
     }]);
 
     next();

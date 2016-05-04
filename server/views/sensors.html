@@ -5,16 +5,14 @@
 {% block content %}
 
     <h1>{{title}}</h1>
-    <h2>Scan barcode for tree information</h2>
-    {% for tree in trees %}
+    {% for user in users %}
     <div class="qrcode">
         <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 31 31">
-            <path d="{{tree.qrcode}}"></path>
+            <path d="{{user.qrcode}}"></path>
         </svg>
         <div class="detail">
-            <strong>{{tree.title}}</strong>
-            <p>{{tree.description}}</p>
-            <a href="/photos/{{tree.id}}">View photos</a>
+            <strong>{{user.firstName}}&nbsp;{{user.lastName}}</strong>
+            <p>{{user.email}}</p>
         </div>
     </div>
     {% endfor %}
