@@ -22,14 +22,11 @@ exports.register = function(server, options, next) {
             handler: function(request, reply){
                 axios.get('https://secure-dusk-26659.herokuapp.com/trees')
                     .then(function (response) {
-                        //console.log(response.data);
                         reply.view('index', {
                             title: 'Welcome to smart tree homepage',
                             trees: generateBarCode(response.data, 'id')
                         });
-                    })
-                    .catch(function (err) {
-                        console.log(err);
+                    }).catch(function (err) {
                         reply.view('index', {
                             title: 'Welcome to smart tree homepage',
                             trees: [] //don't display tree
@@ -45,13 +42,11 @@ exports.register = function(server, options, next) {
             handler: function(request, reply){
                 axios.get('https://secure-dusk-26659.herokuapp.com/users')
                     .then(function (response) {
-                        //console.log(response.data);
                         reply.view('user', {
                             title: 'Scan barcode to login',
                             users: generateBarCode(response.data, 'userId')
                         });
-                    })
-                    .catch(function (err) {
+                    }).catch(function (err) {
                         console.log(err);
                         reply.view('user', {
                             title: 'Scan barcode to login',
